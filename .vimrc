@@ -60,6 +60,12 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'vim-scripts/indentpython.vim--nianyang'
 " Indent text object
 Bundle 'michaeljsmith/vim-indent-object'
+" Syntastic
+Bundle 'scrooloose/syntastic'
+" Snipmate
+Bundle 'msanders/snipmate.vim'
+" Vim plugin for Drupal
+Bundle 'ageorge/vim-plugin-for-drupal'
 
 " Bundles from vim-scripts repos
 
@@ -280,3 +286,18 @@ let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 " to use fancy symbols for powerline, uncomment the following line and use a
 " patched font (more info on the README.rst)
 " let g:Powerline_symbols = 'fancy'
+
+" Drupal coding standards in syntastic
+"
+" Passive mode for syntastic (only check on demand, not on save).
+" Use :SyntasticCheck to check and :SyntasticToggleMode to toggle
+" between passive and active modes.
+"
+" Syntastic configuration for phpcs is set in vim-for-drupal-plugin.
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': [] }
+
+" Highlight column 80
+set colorcolumn=80
+highlight ColorColumn ctermbg=LightYellow guibg=LightYellow
