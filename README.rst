@@ -1,28 +1,31 @@
-fisa-vim-config
-===============
-
-my vim configuration (lot of python, autocompletition, fuzzy finder, debugger, ...)
+drupal-vim-config
+=================
 
 What is this?
 -------------
 
-**(IMPORTANT! updating from a previous version? check the install section for new dependencies, and read the updating instructions. It can also be useful to look at the CHANGELOG)**
+This is my vim configuration, forked from `fisadev/fisa-vim-config <https://github.com/fisadev/fisa-vim-config>`_ with some drupal specific additions.
 
-My personal `Vim <http://www.vim.org/>`_ configuration, built according to my personal preferences, without any justification to think it's the best possible vim configuration. If you like it, great! :)
-It's mainly oriented to python software development, but many of its features are useful for other languages and editing tasks.
+* all the vim magic comes from `fisadev/fisa-vim-config <https://github.com/fisadev/fisa-vim-config>`_
+
+* all the vim + drupal magic comes from `vim plugin for drupal <http://drupal.org/project/vimrc>`_ (read `their documentation <http://drupal.org/project/vimrc>`_ for details)
+
+The original .vimrc is mainly oriented to python software development, but many of its features are useful for other languages and editing tasks, and I've added some drupal specific features.
 
 Feel free to distribute it (it's GPL licensed), and I'm not responsible for any good or bad consecuences of using it (I don't know how a vim configuration can harm you, but you should never underestimate the power of vim :p).
 
-You can report any issue on the `Issues <https://github.com/fisadev/fisa-vim-config/issues>`_ section. And if you need/want to contact me, my gmail account is "fisadev".
+`Download <https://raw.github.com/ageorge/vim-config/master/.vimrc>`_
 
-(Juan Pedro Fisanotti)
-
-`Download <https://raw.github.com/fisadev/fisa-vim-config/master/.vimrc>`_
+Keep reading for features and installation instructions.
 
 Features or it didn't happen!
 -----------------------------
 
-magic-powered autocompletition
+drupal coding standards
+
+.. image:: http://i.imgur.com/rrIyQ.png
+
+magic-powered autocompletion
 
 .. image:: http://i.imgur.com/7xf4A.png
 
@@ -41,9 +44,24 @@ fuzzy code finder (next step: mind reader)
 
 Most important features include:
 
+* **Vim plugin for drupal**
+
+  Lots of features (thanks to `vim plugin for drupal <http://drupal.org/project/vimrc>`_)
+
+  * snippets
+  * open function definition in browser directly from vim
+  * syntax highlighting for drupal php and info files
+  * and more... (see `docs <http://drupal.org/project/vimrc>`_)
+
+* **Drupal coding standards validation**
+
+  * ``:SyntasticCheck`` check the file
+  * ``:Errors`` open the errors window
+  * ``:SyntasticToggleMode`` toggle between active mode (check on save) and passive mode (check on demand).
+
 * **Plugins managed using Vundle**! You can easily install or remove plugins, and they are installed into ``.vim/bundle/``. More info `here <https://github.com/gmarik/vundle>`_
 
-* **Smart autocompletition as you type**, sometimes using python instrospection (completition of module names, instance methods and attributes) and sometimes text-based (used words).
+* **Smart autocompletion as you type**, sometimes using python instrospection (completition of module names, instance methods and attributes) and sometimes text-based (used words).
 
 * **Fuzzy file and code finder** (like Textmante or Sublime Text 2):
 
@@ -92,7 +110,7 @@ Most important features include:
 
 * **Results count** while searching text.
 
-* **Search autocompletition** of words using ``Tab``!.
+* **Search autocompletion** of words using ``Tab``!.
 
 * **Search and read python documentation** with the ``:Pydoc`` command. Example: ``:Pydoc collections``.
 
@@ -116,7 +134,7 @@ Most important features include:
   * **highlighted search results**.
   * **line numbers**.
   * keep **cursor 3 lines away from screen border while scrolling**.
-  * **shell-like autocompletition of commands and paths** (autocomplete the common part and show matching options).
+  * **shell-like autocompletion of commands and paths** (autocomplete the common part and show matching options).
 
 * **Python interpreter inside vim**, or any other console. They are opened as a buffer using the command ``:ConqueTerm``. Examples: ``:ConqueTerm python``, ``:ConqueTerm bash``.
 
@@ -193,11 +211,19 @@ Super easy installation
 
   (if you don't have Pip, find it here: `pip <http://pypi.python.org/pypi/pip>`_)
 
+  You will also need PHP_CodeSniffer and the Drupal style definition if you want to validate your files (instructions based on `this article <http://echodittolabs.org/drupal-coding-standards-vim-code-sniffer-syntastic-regex>`_).
+
+  ::
+
+     sudo pear install PHP_CodeSniffer
+     wget http://ftp.drupal.org/files/projects/drupalcs-7.x-1.x-dev.tar.gz
+     tar zxvf drupalcs-7.x-1.x-dev.tar.gz -C /usr/local/share
+     sudo ln -sv /usr/local/share/drupalcs/Drupal $(pear config-get php_dir)/PHP/CodeSniffer/Standards
+
+
 * **Put the configuration files where they belong**
 
   Place the file ``.vimrc`` on your linux home folder.
-
-  Example: my linux user is "fisa", so now I have: ``/home/fisa/.vimrc``.
 
 * **Open vim**
 
@@ -215,48 +241,6 @@ Keeping your vim up-to-date
 ---------------------------
 
 After updating the .vimrc, you should run ``:BundleClean`` (this will remove plugins no longer used) and ``:BundleInstall!`` (this will install any new plugins, and update the existing ones to the last versions). You can also run ``:BundleInstall!`` at any time to update the installed plugins.
-
-Sources
--------
-
-Thanks to some people from `Pyar <http://python.org.ar>`_, who show me vim for the first time and shared their configurations with me on the PyCamp 2010 :). Some of my tweaks were copied from their configurations.
-
-* Hector Sanchez
-* Juanjo Conti
-* Lucas
-* Joaquin Sorianello
-* Alejandro Santos
-* Facundo Batista
-* Luciano Bello
-
-And thanks to all the developers of the plugins that I simply use here:
-
-* `Plugins manager (Vundle) <https://github.com/gmarik/vundle>`_
-* `Vundle autoinstalation <http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/>`_
-* `Debugger (vim-debug) <http://github.com/jabapyth/vim-debug/>`_
-* `GVim color scheme (wombat) <http://www.vim.org/scripts/script.php?script_id=1778>`_
-* `Consoles as buffers (ConqueShell) <http://www.vim.org/scripts/script.php?script_id=2771>`_
-* `Autocompletition (autocomplpop) <http://www.vim.org/scripts/script.php?script_id=1879>`_
-* `Better file browser (NERDTree) <https://github.com/scrooloose/nerdtree>`_
-* `Search and read python documentation (PyDoc) <https://github.com/fs111/pydoc.vim>`_
-* `Class/module browser (Tagbar) <https://github.com/majutsushi/tagbar>`_
-* `Pending tasks list (TaskList) <http://www.vim.org/scripts/script.php?script_id=2607>`_
-* `Python code checker (Pyflakes-vim) <http://www.vim.org/scripts/script.php?script_id=2441>`_
-* `Search results counter (IndexedSearch) <http://www.vim.org/scripts/script.php?script_id=1682>`_
-* `Code commenter (NERDCommenter) <https://github.com/scrooloose/nerdcommenter>`_
-* `HTML/XML tags navigation (Matchit) <http://www.vim.org/scripts/script.php?script_id=39>`_
-* `Code and files fuzzy finder (ctrlp) <https://github.com/kien/ctrlp.vim>`_
-* `PEP8 checker (with shows pyflakes errors too) <https://github.com/nvie/vim-flake8>`_
-* `Zen coding <https://github.com/mattn/zencoding-vim/>`_
-* `Git integration <https://github.com/motemen/git-vim>`_
-* `Tab list pane (tabman) <https://github.com/kien/tabman.vim>`_
-* `Beautiful status line (Powerline) <https://github.com/Lokaltog/vim-powerline>`_
-* `256 colorscheme (fisa) <https://github.com/fisadev/fisa-vim-colorscheme>`_
-* `Surround actions <https://github.com/tpope/vim-surround>`_
-* `AutoClose <https://github.com/Townk/vim-autoclose>`_
-* `Better python indentation <https://github.com/vim-scripts/indentpython.vim--nianyang>`_
-* `Search autocompletition <http://www.vim.org/scripts/script.php?script_id=474>`_
-* `YankRing <http://www.vim.org/scripts/script.php?script_id=1234>`_
 
 Optional: fancy symbols and breadcrumbs in the status line
 ----------------------------------------------------------
