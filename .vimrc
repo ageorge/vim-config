@@ -81,7 +81,7 @@ Bundle 'fisadev/vim-isort'
 " Syntastic
 Bundle 'scrooloose/syntastic'
 " Vim plugin for Drupal
-Bundle 'ageorge/vim-plugin-for-drupal'
+Bundle 'ageorge/vim-drupal', {'rtp': 'bundle/vim-plugin-for-drupal'}
 
 " Bundles from vim-scripts repos
 
