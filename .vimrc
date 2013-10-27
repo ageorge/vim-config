@@ -58,11 +58,10 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'michaeljsmith/vim-indent-object'
 " Python autocompletion and documentation
 Bundle 'davidhalter/jedi-vim'
-" Snippets manager (SnipMate), dependencies, and snippets repo
+" Snippets manager (SnipMate) and dependencies
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'honza/vim-snippets'
-Bundle 'garbas/vim-snipmate'
+Bundle 'msanders/snipmate.vim'
 " Git diff icons on the side of the file lines
 Bundle 'airblade/vim-gitgutter'
 " Better python indentation
@@ -81,8 +80,6 @@ Bundle 'fisadev/vim-isort'
 " Bundle 'myusuf3/numbers.vim'
 " Syntastic
 Bundle 'scrooloose/syntastic'
-" Snipmate
-Bundle 'msanders/snipmate.vim'
 " Vim plugin for Drupal
 Bundle 'ageorge/vim-plugin-for-drupal'
 
