@@ -27,19 +27,19 @@ drupal coding standards
 
 magic-powered autocompletion
 
-.. image:: http://i.imgur.com/7xf4A.png
+.. image:: ./screenshots/autocomplete.png
 
 class browser
 
-.. image:: http://i.imgur.com/KBzeO.png
+.. image:: ./screenshots/class_browser.png
 
 detecting your nasty errors
 
-.. image:: http://i.imgur.com/9U1KP.png
+.. image:: ./screenshots/errors.png
 
 fuzzy code finder (next step: mind reader)
 
-.. image:: http://i.imgur.com/stkUL.png
+.. image:: ./screenshots/fuzzy_finder.png
 
 
 Most important features include:
@@ -61,17 +61,25 @@ Most important features include:
 
 * **Plugins managed using Vundle**! You can easily install or remove plugins, and they are installed into ``.vim/bundle/``. More info `here <https://github.com/gmarik/vundle>`_
 
-* **Smart autocompletion as you type**, sometimes using python instrospection (completition of module names, instance methods and attributes) and sometimes text-based (used words).
+* **Smart autocompletion as you type**, sometimes using python instrospection (completion of module names, instance methods and attributes) and sometimes text-based (used words) (from version 4.0, it's even more intelligent!). Most of the time is automatically displayed, but you can force it to appear using ``Ctrl-space``.
 
-* **Fuzzy file and code finder** (like Textmante or Sublime Text 2):
+* **Fuzzy file, code and command finder** (like Textmante or Sublime Text 2):
 
   * ``,e`` = open file (like the original :e) but with recursive and fuzzy file name matching. Example: if you type "mopy" it will find a file named "models.py" placed on a subdirectory. And allows you to open the selected file on a new tab with ``Ctrl-t``!
   * ``,g`` = fuzzy symbol finder (classes, methods, variables, functions, ...) on the current file. Example: if you type "usr" it will find the User class definition on the current file. ``,G`` does the same but on all opened files.
+  * ``,c`` = fuzzy command finder (internal vim commands, or custom commands). Example: if you type "diff" it will find ``:GitDiff``, ``:diffthis``, and many other similar commands.
   * ``,f`` = fuzzy text finder on all the opened files. Example: if you type "ctm=6" it will find the line containing "current_time = 16".
   * ``,m`` = fuzzy finder of most recently used files.
-  * ``,d`` = same as ``,g`` (symbol finder) but initiates the search with the word under the cursor (sort of "fuzzy go to definition"). ``,D`` does the same but on all opened files.
-  * ``,we``, ``,wg``, ``,wf`` and ``,wm`` = same as ``,e``, ``,g``, ``,f`` and ``,wm`` but initiate the search with the word under the cursor (also the upper case version of ``,G``, ``,wG``).
+  * ``,we``, ``,wg``, ``,wc``, ``,wf`` and ``,wm`` = same as ``,e``, ``,g``, ``,c``, ``,f`` and ``,wm`` but initiate the search with the word under the cursor (also the upper case version of ``,G``, ``,wG``). Is useful to think about the ``,wg`` as a "fuzzy go to definition" (if the definition is in the same file, or ``,wG`` if the definition is on any of the opened files).
   * ``,pe`` = same as ``,e`` but initiates the search with the path under the cursor.
+
+
+* **Jedi-vim for really neat python goodies!**:
+
+  * **Go to definition** with ``,d``, or open the definition on a new tab with ``,D``.
+  * **Go to assignment** with ``,a``.
+  * **Find occurrences** with ``,o``.
+  * And it is the power behind the magic python autocompletion.
 
 * **Classes/module browser** that lists classes, functions, methods, and such of the current file, and navigates to them when ENTER is pressed. Toggle it with ``F4``.
 
@@ -110,9 +118,7 @@ Most important features include:
 
 * **Results count** while searching text.
 
-* **Search autocompletion** of words using ``Tab``!.
-
-* **Search and read python documentation** with the ``:Pydoc`` command. Example: ``:Pydoc collections``.
+* **Search and read python documentation** with the ``:Pydoc`` command. Example: ``:Pydoc collections`` (also works over the current word with vim's default help keybinding: ``Shift-K``).
 
 * **Comment and uncomment code** with ``\ci``.
 
@@ -121,20 +127,22 @@ Most important features include:
   * ``tt`` = new tab and leaves the cursor waiting to specify the file path to open (leave blank to open an empty tab).
   * ``tn`` or ``Ctrl-Shift-Right`` = next tab.
   * ``tp`` or ``Ctrl-Shift-Left`` = previous tab.
-  * ``tm`` = move current tab to the end.
+  * ``tm`` = move current tab to a specific position (or to the end if no position number is specified).
   * ``tl`` = show a list of current tabs with their inner windows on a side pane. You can navigate them!
+  * ``ts`` = duplicate current tab.
 
   The mappings starting with the ``t`` letter work only on command mode, but the mappings with ``Ctrl-Shift`` work on both, command and insert mode.
 
 * **Easy window navigation** using ``Alt-arrows`` keys.
 
-* Some vim goodies enabled by default: 
+* Some vim goodies enabled by default:
 
   * **incremental search** (moves to the first result while you are typing).
   * **highlighted search results**.
   * **line numbers**.
   * keep **cursor 3 lines away from screen border while scrolling**.
   * **shell-like autocompletion of commands and paths** (autocomplete the common part and show matching options).
+  * **syntax highlighting on** by default.
 
 * **Python interpreter inside vim**, or any other console. They are opened as a buffer using the command ``:ConqueTerm``. Examples: ``:ConqueTerm python``, ``:ConqueTerm bash``.
 
@@ -142,7 +150,7 @@ Most important features include:
 
 * **Navigate html/xml tags** the same way that you navigate (), {} and []: using ``%``.
 
-* **Beautiful status line allways visible**, with colors, breadcrumbs and useful information about file type, encoding and position.
+* **Beautiful status line allways visible**, with colors, breadcrumbs and useful information about file type, encoding and position. When working with python files, it also displays the current python function or class where the cursor is.
 
 * **Automatically removes trailing spaces** when saving python files.
 
@@ -154,15 +162,17 @@ Most important features include:
 
 * **2 spaces indentation for html and javascript** (can disable it removing two lines from the ``.vimrc``).
 
-* **Zen coding** for html: generate lots of html code writing simple and short expressions. 
-  Example: 
+* **Thousands of code snippets for many languages** with SnipMate. Example, in python you can write ``cl`` and press ``Ctrl-i`` (while in inser mode), and it will insert the boilerplate code of a common python class (then use ``Ctrl-i`` to navigate the snippet fields).
+
+* **Zen coding** for html: generate lots of html code writing simple and short expressions.
+  Example:
 
   1. write ``#books>ul>li.book*5>a``
   2. press ``Ctrl-y ,``
   3. it will generate:
 
      ::
-     
+
       <div id="books">
           <ul>
               <li class="book">
@@ -182,18 +192,22 @@ Most important features include:
               </li>
           </ul>
       </div>
-     
+
   Learn more on the plugin `site <https://github.com/mattn/zencoding-vim/>`_.
 
-* **Git integration**, with commands such as: ``:GitStatus``, ``:GitDiff``, ``:GitBlame``, ``:GitLog``, ``:GitCommit``, or simply ``:Git`` with your own command. Also includes key mappings and syntax highlighting for git displays.
+* **Git integration**, with commands such as: ``:GitStatus``, ``:GitDiff``, ``:GitBlame``, ``:GitLog``, ``:GitCommit``, or simply ``:Git`` with your own command. Also includes key mappings and syntax highlighting for git displays. And displays icons on the side of each line based on the result of a git diff of the current file (example: if you added a line and still didn't commit the file, that line will have a green ``+`` on its side).
 
 * **Better python indentation**.
 
 * Really neat **surround actions** using the surround.vim plugin. Learn how to use it `here <https://github.com/tpope/vim-surround>`_.
 
-* **indentation defined text objects** for the editing language, named ``i``. For example, you can change an entire indented code block with ``cii``, or the indented block and its header line with ``cai`` (also yank, delete, ...).
+* **Indentation defined text objects** for the editing language, named ``i``. For example, you can change an entire indented code block with ``cii``, or the indented block and its header line with ``cai`` (also yank, delete, ...).
 
 * **Copy history navigation** using the YankRing plugin, which allows you to cicle the vim clipboard with ``Ctrl-p`` and ``Ctrl-n``, and many other features (described `here <http://www.vim.org/scripts/script.php?script_id=1234>`_).
+
+* **Insert ipdb breakpoints** with ``\b``.
+
+* **Automatically sort python imports** using ``:Isort``.
 
 Super easy installation
 -----------------------
@@ -206,11 +220,10 @@ Super easy installation
 
   ::
 
-    sudo apt-get install exuberant-ctags git
-    sudo pip install dbgp vim-debug pep8 flake8 pyflakes
+    sudo apt-get install vim exuberant-ctags git
+    sudo pip install dbgp vim-debug pep8 flake8 pyflakes isort
 
   (if you don't have Pip, find it here: `pip <http://pypi.python.org/pypi/pip>`_)
-
   You will also need PHP_CodeSniffer and the Drupal style definition if you want to validate your files (instructions based on `this article <http://echodittolabs.org/drupal-coding-standards-vim-code-sniffer-syntastic-regex>`_).
 
   ::
@@ -225,12 +238,14 @@ Super easy installation
 
   Place the file ``.vimrc`` on your linux home folder.
 
+  Example: my linux user is "fisa", so now I have: ``/home/fisa/.vimrc``.
+
 * **Open vim**
 
   Simply run ``vim`` on your terminal, and it will try to install the plugins. They will be installed into the ``.vim/bundle`` folder.
 
   Wait for the installation to finish...
-  
+
   Done! You have your new shiny powerful vim :)
 
 * **Optional: fancy symbols and breadcrumbs**
@@ -240,24 +255,86 @@ Super easy installation
 Keeping your vim up-to-date
 ---------------------------
 
-After updating the .vimrc, you should run ``:BundleClean`` (this will remove plugins no longer used) and ``:BundleInstall!`` (this will install any new plugins, and update the existing ones to the last versions). You can also run ``:BundleInstall!`` at any time to update the installed plugins.
+After downloading the new version of the ``.vimrc`` file, you should close vim, and run (on the terminal):
+
+  ::
+
+    vim +BundleClean +BundleInstall! +qa 
+
+(this will remove plugins no longer used, install any new plugins, and update the existing ones to the last versions). 
+
+You can also run ``:BundleInstall!`` from inside vim at any time to update the installed plugins (and restart vim after it finishes).
+
+Sources
+-------
+
+Thanks to some people from `Pyar <http://python.org.ar>`_, who show me vim for the first time and shared their configurations with me on the PyCamp 2010 :). Some of my tweaks were copied from their configurations.
+
+* Hector Sanchez
+* Juanjo Conti
+* Lucas
+* Joaquin Sorianello
+* Alejandro Santos
+* Facundo Batista
+* Luciano Bello
+
+And thanks to all the developers of the plugins that I simply use here:
+
+* `Plugins manager (Vundle) <https://github.com/gmarik/vundle>`_
+* `Vundle autoinstalation <http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/>`_
+* `Debugger (vim-debug) <http://github.com/jabapyth/vim-debug/>`_
+* `GVim color scheme (wombat) <http://www.vim.org/scripts/script.php?script_id=1778>`_
+* `Consoles as buffers (ConqueShell) <http://www.vim.org/scripts/script.php?script_id=2771>`_
+* `Autocompletion (autocomplpop) <http://www.vim.org/scripts/script.php?script_id=1879>`_
+* `Better file browser (NERDTree) <https://github.com/scrooloose/nerdtree>`_
+* `Class/module browser (Tagbar) <https://github.com/majutsushi/tagbar>`_
+* `Pending tasks list (TaskList) <http://www.vim.org/scripts/script.php?script_id=2607>`_
+* `Python code checker (Pyflakes-vim) <http://www.vim.org/scripts/script.php?script_id=2441>`_
+* `Search results counter (IndexedSearch) <http://www.vim.org/scripts/script.php?script_id=1682>`_
+* `Code commenter (NERDCommenter) <https://github.com/scrooloose/nerdcommenter>`_
+* `HTML/XML tags navigation (Matchit) <http://www.vim.org/scripts/script.php?script_id=39>`_
+* `Code and files fuzzy finder (ctrlp) <https://github.com/kien/ctrlp.vim>`_
+* `Ctrlp extension for fuzzy command finder <https://github.com/fisadev/vim-ctrlp-cmdpalette>`_
+* `Zen coding <https://github.com/mattn/zencoding-vim/>`_
+* `Git integration <https://github.com/motemen/git-vim>`_
+* `Tab list pane (tabman) <https://github.com/kien/tabman.vim>`_
+* `Beautiful status line (Airline) <https://github.com/bling/vim-airline>`_
+* `256 colorscheme (fisa) <https://github.com/fisadev/fisa-vim-colorscheme>`_
+* `Surround actions <https://github.com/tpope/vim-surround>`_
+* `AutoClose <https://github.com/Townk/vim-autoclose>`_
+* `YankRing <http://www.vim.org/scripts/script.php?script_id=1234>`_
+* `Indent object <http://github.com/michaeljsmith/vim-indent-object>`_
+* `Git diff icons <http://github.com/airblade/vim-gitgutter>`_
+* `Relative line numbers <http://github.com/myusuf3/numbers.vim>`_
+* `Snippets manager (SnipMate) <http://github.com/garbas/vim-snipmate>`_ (plus dependencies `addon-mw-utils <http://github.com/MarcWeber/vim-addon-mw-utils>`_ and `tlib <http://github.com/tomtom/tlib_vim>`_ )
+* `SnipMate snippets compilation <http://github.com/honza/vim-snippets>`_
+* `Search and read python documentation (PyDoc) <https://github.com/fs111/pydoc.vim>`_
+* `PEP8 checker (with shows pyflakes errors too) <https://github.com/nvie/vim-flake8>`_
+* `Better python indentation <https://github.com/vim-scripts/indentpython.vim--nianyang>`_
+* `Jedi-vim (python autocompletion, go to definition, find ocurrences and documentation display) <https://github.com/davidhalter/jedi-vim>`_
+* `Font patcher, grabbed from the original vim-powerline repo <https://github.com/Lokaltog/vim-powerline>`_
+* `Python imports sorter <https://github.com/fisadev/vim-isort>`_
 
 Optional: fancy symbols and breadcrumbs in the status line
 ----------------------------------------------------------
 
-Powerline allows you to use fancy symbols on the status line for breadcrumbs and indicators (example: a padlock when editing read-only files). Using them requires to have a patched font in your terminal. It may sound black magic, but in fact is quite easy.
+Airline allows you to use fancy symbols on the status line for breadcrumbs and indicators (example: a padlock when editing read-only files). Using them requires to have a patched font in your terminal. It may sound black magic, but in fact is quite easy.
+
+**Get the font patcher and dependencies**
+
+Grab the ``fontpatcher`` directory from this repo to some location on your computer (the patcher was written by Kim Silkebækken, the author of the original vim-powerline plugin). Then install the fontforge dependency: in Ubuntu you only need to run ``sudo apt-get install python-fontforge``. In other distros there should be a package with a similar name.
 
 **Patch**
 
-First we will need to patch a font. Pick the font you want to patch (it should be a monospace font). Copy its .ttf file (on Ubuntu you can find them under ``/usr/share/fonts/truetype/``) to the ``.vim/bundle/vim-powerline/fontpatcher`` folder. Cd into that folder and run ``./fontpatcher YOURFONTFILE.ttf``. Now you will have a file named ``YOURFONTFILE-Powerline.ttf``, that's your patched font.
+We will need to patch a font. Pick the font you want to patch (it should be a monospace font). Copy its .ttf file (on Ubuntu you can find them under ``/usr/share/fonts/truetype/``) to the ``fontpatcher`` folder. Cd into that folder and run ``./fontpatcher YOURFONTFILE.ttf``. Now you will have a file named ``YOURFONTFILE-Powerline.ttf``, that's your patched font.
 
 **Install**
 
-Now we need to install the patched font to our system. On Ubuntu, double click on the font file and choose "install". On other systems copy the font file to the ``YOURHOMEFOLDER/.fonts/`` folder and then run ``sudo fc-cache -vf``. 
+Now we need to install the patched font to our system. On Ubuntu, double click on the font file and choose "install". On other systems copy the font file to the ``YOURHOMEFOLDER/.fonts/`` folder and then run ``sudo fc-cache -vf``.
 
 **Configure**
 
-After installing the font, go to the settings of your terminal app and select the patched font. Finally, open your ``.vimrc`` and uncomment the line ``let g:Powerline_symbols = 'fancy'``.
+After installing the font, go to the settings of your terminal app and select the patched font. Finally, open your ``.vimrc`` and uncomment the lines at the end of the file, after the comment that explains that those are the lines for the fancy symbols.
 
 That's it! Restart your vim and enjoy the beauty of Powerline.
 

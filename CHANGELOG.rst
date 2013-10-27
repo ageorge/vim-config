@@ -154,3 +154,115 @@ Changelog
   * Added indentation defined text object plugin
   * Added search autocompletition plugin
   * Added yank history plugin
+
+* Version 4.0
+
+  * added python-mode! this:
+    * replaces the old better python indentation
+    * adds smarter autocompletition
+    * adds smarter go to definition and find occurrences
+    * adds python motion and operators for the editing language
+    * replaces the old better python highlighting
+    * adds ipdb breakpoints utility
+    * adds refactor utilities
+    * replaces the old python documentation finder
+    * replaces the old offline pep8 and lint checkers
+  * The ``tabm`` mapping allows specifying the tab number
+  * Ignore .pyc and .pyo files on NERDTree
+  * Pep8 checker now runs with ``\8`` instead of ``,8`` (the ``,`` mappings will be only for navigation and searching)
+  * Fixed autoinstalation source link
+  * Added font name below the screenshots
+  * Added vim itself as dependency on the instalation tutorial
+
+* Version 4.1
+
+  * "Completition" is wrong, the correct word is "completion" :)
+
+* Version 4.2
+
+  * Rope disabled by default
+
+* Version 4.3
+
+  * Removed SearchComplete plugin, because it breaks search history navigation
+
+* Version 4.4
+
+  * New mappings for duplicating tabs, and go to definition in new tab
+  * Added relative numbering plugin, but disabled by default
+  * Better update instructions
+  * Added snipmate and snippets repos
+  * Added support for screen-256 on 256 colors theme selection
+  * Added plugin to display git diff icons of current file on the side of each line
+
+* Version 4.4.1
+
+  * Small doc fixes
+
+* Version 4.4.2
+
+  * Updating references to plugin sources
+  * Small comment and quotes changes
+
+* Version 4.4.3
+
+  * SnipMate snippets repo was moved, updated it
+
+* Version 4.4.4
+
+  * Just updated the link to the CPMono font on the README
+
+* Version 4.5
+
+  * Added fuzzy command finder
+
+* Version 4.5.1
+
+  * Fixed 2 space tabs on html and javascript
+
+* Version 4.5.2
+
+  * ZenMode repo was moved, updated it
+
+* Version 5.0
+
+  * Replaced python-mode with jedi-vim plus some old removed plugins (pydoc, flake8, indentpython)
+  * Hidden YankRing history file
+  * Removed old legacy completion configs
+  * Fixed problems between jedi-vim and GitGutter
+  * Fixed problems between jedi-vim and SnipMate (to do this, had to change the SnipMate mapping)
+  * Fixed problems between jedi-vim and AutocomplPop
+
+* Version 5.0.1
+
+  * Fix tabs behaviour of go to definition
+
+* Version 5.0.2
+
+  * Fix trailing whitespaces cleaner regex
+
+* Version 5.0.3
+
+  * Fix fuzzy symbol finder map, changed jedi-vim go to assignment map
+  * Syntax highlighting on by default
+
+* Version 5.0.4
+
+  * Add mapping for ipdb breakpoints insert
+  * Removed default mappings of vim-debug
+  * Removed python-mode from the references (no longer used)
+
+* Version 5.1
+
+  * Replaced vim-powerline with vim-airline
+  * New font patching method
+  * Added screenshots to the repo
+  * Updated docs and screenshots
+
+* Version 5.2
+
+  * Added python imports sorter (**new python package dependency: isort**)
+
+* Version 5.3
+
+  * Fixed problem with SnipMate and AutocomplPop, changing the mapping for SnipMate
