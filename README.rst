@@ -12,7 +12,7 @@ This is my vim configuration, forked from `fisadev/fisa-vim-config <https://gith
 
 The original .vimrc is mainly oriented to python software development, but many of its features are useful for other languages and editing tasks, and I've added some drupal specific features.
 
-Feel free to distribute it (it's GPL licensed), and I'm not responsible for any good or bad consecuences of using it (I don't know how a vim configuration can harm you, but you should never underestimate the power of vim :p).
+Feel free to distribute it (it's GPL licensed), and I'm not responsible for any good or bad consecuences of using it.
 
 `Download <https://raw.github.com/ageorge/vim-config/master/.vimrc>`_
 
@@ -23,7 +23,7 @@ Features or it didn't happen!
 
 drupal coding standards
 
-.. image:: http://i.imgur.com/rrIyQ.png
+.. image:: ./screenshots/drupal_coding_standards.png
 
 magic-powered autocompletion
 
