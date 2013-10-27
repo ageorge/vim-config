@@ -193,7 +193,7 @@ Most important features include:
           </ul>
       </div>
 
-  Learn more on the plugin `site <https://github.com/mattn/zencoding-vim/>`_.
+  Learn more on the plugin `site <https://github.com/mattn/emmet-vim/>`_.
 
 * **Git integration**, with commands such as: ``:GitStatus``, ``:GitDiff``, ``:GitBlame``, ``:GitLog``, ``:GitCommit``, or simply ``:Git`` with your own command. Also includes key mappings and syntax highlighting for git displays. And displays icons on the side of each line based on the result of a git diff of the current file (example: if you added a line and still didn't commit the file, that line will have a green ``+`` on its side).
 
