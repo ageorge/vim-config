@@ -80,6 +80,8 @@ Bundle 'fisadev/vim-isort'
 " Bundle 'myusuf3/numbers.vim'
 " Syntastic
 Bundle 'scrooloose/syntastic'
+" Multiline edit
+Bundle "terryma/vim-multiple-cursors"
 " Vim plugin for Drupal
 Bundle 'ageorge/vim-drupal', {'rtp': 'bundle/vim-plugin-for-drupal'}
 
@@ -336,3 +338,10 @@ if &term =~ '^screen'
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
 endif
+
+" Change multiple-cursors mappings so it won't conflict with yankring.
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-b>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
