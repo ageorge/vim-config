@@ -328,10 +328,6 @@ let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
 
-" Highlight column 80
-set colorcolumn=80
-highlight ColorColumn ctermbg=LightYellow guibg=LightYellow
-
 " Fix arrow keys when run inside tmux (see http://superuser.com/a/402084).
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
