@@ -43,7 +43,8 @@ Bundle 'motemen/git-vim'
 " Tab list panel
 Bundle 'kien/tabman.vim'
 " Airline
-Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 " Terminal Vim with 256 colors colorscheme
 Bundle 'fisadev/fisa-vim-colorscheme'
 " Consoles as buffers
@@ -84,6 +85,8 @@ Bundle 'scrooloose/syntastic'
 Bundle "terryma/vim-multiple-cursors"
 " Vim plugin for Drupal
 Bundle 'ageorge/vim-drupal', {'rtp': 'bundle/vim-plugin-for-drupal'}
+" Ansible
+Bundle 'pearofducks/ansible-vim'
 
 " Bundles from vim-scripts repos
 
