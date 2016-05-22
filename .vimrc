@@ -348,3 +348,8 @@ let g:multi_cursor_next_key='<C-b>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+
+" Ansible options.
+let g:ansible_name_highlight = 'b'
+let g:ansible_extra_syntaxes= 'sh.vim'
+let g:ansible_extra_keywords_highlight = 1
