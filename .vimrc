@@ -87,6 +87,8 @@ Bundle "terryma/vim-multiple-cursors"
 Bundle 'ageorge/vim-drupal', {'rtp': 'bundle/vim-plugin-for-drupal'}
 " Ansible
 Bundle 'pearofducks/ansible-vim'
+" Markdown preview (see repo for dependencies)
+Bundle 'JamshedVesuna/vim-markdown-preview'
 
 " Bundles from vim-scripts repos
 
@@ -353,3 +355,6 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:ansible_name_highlight = 'b'
 let g:ansible_extra_syntaxes= 'sh.vim'
 let g:ansible_extra_keywords_highlight = 1
+
+" Markdown preview options.
+let vim_markdown_preview_github=1
