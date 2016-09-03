@@ -367,3 +367,5 @@ let g:ansible_extra_keywords_highlight = 1
 
 " Markdown preview options.
 let vim_markdown_preview_github=1
+
+set colorcolumn=81
