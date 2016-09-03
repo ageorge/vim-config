@@ -150,16 +150,19 @@ let g:tagbar_autofocus = 1
 " NERDTree (better file browser) toggle
 map <F3> :NERDTreeToggle<CR>
 
-" tab navigation
-map tn :tabn<CR>
-map tp :tabp<CR>
+" buffers
+" http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
+set hidden
+map tn :bnext<CR>
+map tp :bprevious<CR>
 map tm :tabm 
-map tt :tabnew 
-map ts :tab split<CR>
-map <C-S-Right> :tabn<CR>
-imap <C-S-Right> <ESC>:tabn<CR>
-map <C-S-Left> :tabp<CR>
-imap <C-S-Left> <ESC>:tabp<CR>
+map tt :e 
+nmap <leader>bl :ls<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+map <C-S-Right> :bnext<CR>
+imap <C-S-Right> <ESC>:bnext<CR>
+map <C-S-Left> :bprevious<CR>
+imap <C-S-Left> <ESC>:bprevious<CR>
 
 " navigate windows with meta+arrows
 map <M-Right> <c-w>l
@@ -310,6 +313,12 @@ let g:AutoClosePumvisible = {"ENTER": "\<C-Y>", "ESC": "\<ESC>"}
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'bubblegum'
 let g:airline#extensions#whitespace#enabled = 0
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " to use fancy symbols for airline, uncomment the following lines and use a
 " patched font (more info on the README.rst)
