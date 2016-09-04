@@ -95,6 +95,8 @@ Plug 'ageorge/vim-drupal', {'rtp': 'bundle/vim-plugin-for-drupal'}
 Plug 'pearofducks/ansible-vim'
 " Markdown preview (see repo for dependencies)
 Plug 'JamshedVesuna/vim-markdown-preview'
+" Undo tree
+Plug 'simnalamburt/vim-mundo'
 if has('python')
     " YAPF formatter for Python
     Plug 'pignacio/vim-yapf-format'
@@ -460,3 +462,9 @@ let g:ansible_extra_keywords_highlight = 1
 " Markdown preview ------------------------------
 
 let vim_markdown_preview_github=1
+
+" Mundo ------------------------------
+
+nnoremap <F5> :MundoToggle<CR>
+let g:mundo_width = 60
+let g:mundo_right = 1
