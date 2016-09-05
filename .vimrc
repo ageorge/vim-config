@@ -89,8 +89,6 @@ Plug 'lilydjwg/colorizer'
 Plug 'mileszs/ack.vim'
 " Multiline edit
 Plug 'terryma/vim-multiple-cursors'
-" Vim plugin for Drupal
-Plug 'ageorge/vim-drupal', {'rtp': 'bundle/vim-plugin-for-drupal'}
 " Ansible
 Plug 'pearofducks/ansible-vim'
 " Markdown preview (see repo for dependencies)
@@ -112,6 +110,11 @@ Plug 'matchit.zip'
 Plug 'Wombat'
 " Yank history navigation
 Plug 'YankRing.vim'
+
+" Plugins from other repos:
+
+" Vim plugin for Drupal
+Plug 'https://git.drupal.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal', 'branch': '7.x-1.x', 'as': 'vim-drupal'}
 
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
