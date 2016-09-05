@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
 " Override configs by directory
 Plug 'arielrossanigo/dir-configs-override.vim'
 " Better file browser
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
 " Class/module browser
@@ -44,8 +44,6 @@ Plug 'fisadev/vim-ctrlp-cmdpalette'
 Plug 'mattn/emmet-vim'
 " Git integration
 Plug 'motemen/git-vim'
-" Tab list panel
-Plug 'kien/tabman.vim'
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -378,12 +376,6 @@ let g:neocomplcache_min_syntax_length = 1
 " complete with workds from any opened file
 let g:neocomplcache_same_filetype_lists = {}
 let g:neocomplcache_same_filetype_lists._ = '_'
-
-" TabMan ------------------------------
-
-" mappings to toggle display, and to focus on it
-let g:tabman_toggle = 'tl'
-let g:tabman_focus  = 'tf'
 
 " Autoclose ------------------------------
 
