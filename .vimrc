@@ -333,6 +333,14 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.pyc$\|\.pyo$',
   \ }
 
+" GitGutter ------------------------------
+
+" custom icons (you need a patched font)
+let g:gitgutter_sign_added = '➕'
+let g:gitgutter_sign_modified = '❗'
+let g:gitgutter_sign_removed = '➖'
+let g:gitgutter_sign_modified_removed = '✖'
+
 " Syntastic ------------------------------
 
 " show list of errors and warnings on the current file
