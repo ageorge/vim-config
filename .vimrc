@@ -55,6 +55,10 @@ Plug 'rosenfeld/conque-term'
 Plug 'fisadev/FixedTaskList.vim'
 " Surround
 Plug 'tpope/vim-surround'
+" Repeat
+Plug 'tpope/vim-repeat'
+" Extended character info
+Plug 'tpope/vim-characterize'
 " Autoclose
 Plug 'Townk/vim-autoclose'
 " Indent text object
