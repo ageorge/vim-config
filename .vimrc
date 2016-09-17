@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
 " Override configs by directory
 Plug 'arielrossanigo/dir-configs-override.vim'
 " Better file browser
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle','NERDTreeFind']}
 " Code commenter
 Plug 'scrooloose/nerdcommenter'
 " Class/module browser
