@@ -138,6 +138,10 @@ set nocompatible
 filetype plugin on
 filetype indent on
 
+" change <leader> and show it in status line
+let mapleader = " "
+set showcmd
+
 " tabs and spaces handling
 set expandtab
 set tabstop=4
