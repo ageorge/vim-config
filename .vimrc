@@ -93,6 +93,8 @@ Plug 'pearofducks/ansible-vim'
 Plug 'JamshedVesuna/vim-markdown-preview'
 " Undo tree
 Plug 'simnalamburt/vim-mundo'
+" Checkbox toggle
+Plug 'jkramer/vim-checkbox'
 if has('python')
     " YAPF formatter for Python
     Plug 'pignacio/vim-yapf-format'
