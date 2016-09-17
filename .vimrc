@@ -280,6 +280,19 @@ nmap ,t :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 
+" NERDCommenter -----------------------------
+
+" add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" change delimiter for php
+let g:NERDCustomDelimiters = {
+    \ 'php': { 'left': '#' }
+\ }
+
 " Tasklist ------------------------------
 
 " show pending tasks list
